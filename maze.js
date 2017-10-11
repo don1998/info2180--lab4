@@ -1,4 +1,4 @@
-window.onload=myFunction;
+window.onload=myFunction1;
 
 function myFunction(){
 	var winner=0;
@@ -13,10 +13,18 @@ function myFunction(){
 	}
 	document.getElementById("end").addEventListener("mouseover",function(){
 		if (winner===0){
-			window.alert("You win!")
+			document.getElementById("status").innerHTML="You win";
+		}
+		else{
+			document.getElementById("status").innerHTML="You lose";
 		}
 	})
 	document.getElementById("start").addEventListener("click",function(){
 		location.reload();
 	})
+}
+
+
+function myFunction1(){
+	document.getElementById("start").addEventListener("click",myFunction)
 }
