@@ -1,8 +1,16 @@
 window.onload=myFunction1;
 
 function myFunction(){
-	var winner=0;
 	var x=document.querySelectorAll(".boundary");
+	var winner=0;
+	document.getElementById("maze").addEventListener("mouseleave",function(){
+		for (let i=0;i<x.length-1;i++){
+				x[i].classList.add("youlose");
+				winner=1;
+			
+		}
+	}
+	)
 	for (let i=0;i<x.length-1;i++){
 		x[i].addEventListener("mouseover",function(){
 			for(let b=0;b<x.length-1;b++){
@@ -22,9 +30,11 @@ function myFunction(){
 	document.getElementById("start").addEventListener("click",function(){
 		location.reload();
 	})
+
+
 }
 
 
 function myFunction1(){
-	document.getElementById("start").addEventListener("click",myFunction)
+	document.getElementById("start").addEventListener("mouseover",myFunction)
 }
