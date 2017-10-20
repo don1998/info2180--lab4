@@ -6,6 +6,7 @@ function myFunction(){
 	document.getElementById("maze").addEventListener("mouseleave",function(){
 		for (let i=0;i<x.length-1;i++){
 				x[i].classList.add("youlose");
+				document.getElementById("status").innerHTML="You lose";
 				winner=1;
 			
 		}
@@ -15,6 +16,7 @@ function myFunction(){
 		x[i].addEventListener("mouseover",function(){
 			for(let b=0;b<x.length-1;b++){
 				x[b].classList.add("youlose");
+				document.getElementById("status").innerHTML="You lose";
 				winner=1;
 			}
 		})
@@ -33,7 +35,6 @@ function myFunction(){
 
 
 }
-
 
 function myFunction1(){
 	document.getElementById("start").addEventListener("mouseover",myFunction)
